@@ -1,0 +1,216 @@
+/* CSS Document: CS55.11 Class Home pages */
+
+* {margin:0px; padding:0px;}
+
+html { font-size: 125%;} /* sets baseline font size at 10px for easy font-size calcs */
+
+body {
+	font-family:Verdana, Arial, sans-serif; 
+	font-size: 50%; /* sets baseline font size at 10px for easy font-size calcs */
+	width: 860px;
+	margin: 10px auto;
+	background: #d1d797;
+}
+
+h1, h2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-left: 160px;
+/*	text-shadow: 3px 3px 2px #903010; */
+}
+h1 {
+	font-size: 3.5em;
+	padding-top: 30px;
+	padding-bottom: .5em;
+}
+h2 {
+	font-size: 2.4em;
+	padding: 10px;
+}
+h3 {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 1.4em;
+	padding: 1em 0 .6em 0;
+}
+
+p, code, label {
+	font-size: 1.4em;
+	line-height: 125%;
+	padding-bottom: .5em;
+}
+
+code { font-size: 1.4em; }
+
+.center { text-align: center; }
+
+header {
+	background: #e2edaf;
+	height: 200px;
+
+}
+  header img  {
+	  float: left;
+	  margin: 10px 20px 10px 10px;
+	  box-shadow: 4px 4px 3px #666;
+  }
+
+#wrapper {
+	border: 1pt solid #000;
+	background: #fff;
+}
+
+#contentarea {  /*Surrounds leftnav and content columns */
+	background: #e2edaf;
+}
+
+#leftnav {  	/*Left Column Box */
+	float: left;
+	width: 120px;
+	padding-left: 10px;
+}
+
+/* Content Box */
+#content {  	
+	width: 704px;
+	min-height: 320px;
+/*	margin-left: 170px; */
+	float: left;
+	padding: 0 12px;
+	background: #fff;  
+}
+
+#content h2 {
+	margin: 20px 0 0 0;
+	padding: 5px;
+}
+
+#content [type=submit] {
+	padding: 3px 5px;
+}
+
+#content img {
+	margin: 15px;
+	border: 1px solid #000;
+}
+
+#content ol { padding-top: .8em; }
+
+#content ol li {
+	font-size: 1.4em;
+	margin-left: 1.5em;
+	padding-bottom: .8em;
+}
+
+#content #form_box {
+	border: 1px solid #d1d797;
+	margin: 10px 0;
+	padding: 5px;
+}
+
+#thumbs {
+	margin: 0 auto;
+	padding-bottom: 15px;
+	width: 515px;
+}
+#thumbs p {
+	font-size: 1em;
+	line-height: 125%;
+	margin-top: .1em;
+	text-align: center;
+}
+.thumb_img {
+	padding-right: 10px;
+	float: left;
+}
+
+#footer {
+	clear: both;
+	margin: 0;
+	padding: 4px 6px;
+	border-top: 1px solid #000;
+	background: #309;
+	color: #fff;
+}
+
+/* LEFT NAV BUTTONS */
+section#leftnav ul {
+	width: 120px;
+	margin-bottom: 6px;
+/*	top: 0;
+	left: 0;*/
+	border-top: 1px solid #000; 
+}
+
+section#leftnav li {
+	list-style-type: none;
+	border-bottom: 1px solid #000;
+	text-align: left;
+	position: relative;
+	padding: 5px;
+	border-bottom: 1px solid #360;
+}
+
+section#leftnav ul a {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width:100%; /* To change button width, only change div.button */
+	text-align: left;
+	vertical-align: text-bottom;
+	font-size: 1.7em;
+	font-weight: bold;
+	color: #000;
+	background: none;
+}
+
+section#leftnav li ul { 
+	width: 150px;
+	left: 120px;
+	top: -1px;
+	position: absolute;
+	background: rgba(226, 237, 175, .93);
+	font-size: 0.9em;
+}
+
+section#leftnav li:hover ul, div#vert_menu li.over ul { 
+	border-top: 1px solid #360;
+}
+
+section#leftnav li ul li { 
+	text-align: left; 
+}
+
+section#leftnav li ul { display: none;} /* hide the 2nd level menu */
+section#leftnav li:hover ul, section#leftnav li.over ul { display: block;} /*until the 1st level element is rolled-over */
+
+section#leftnav ul a:link {
+	text-decoration:none; 
+}
+
+section#leftnav ul a:visited {
+	color: #000;
+	text-decoration:none; 
+}
+
+section#leftnav ul a:hover {
+	color: #903010;
+	text-decoration: none; 
+}
+
+section#leftnav ul a:active {
+	color: #C00;
+	text-decoration: none;
+}
+
+
+/* Aslett clearing method used for Contentarea */
+.clearfix:after {
+	content:".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix { display: inline-block; }
+/* backslash hack hides from IE mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* end backslash hack */
