@@ -1,0 +1,92 @@
+/* CSS Document: CS55.11 Class Home pages */
+
+* {margin:0px; padding:0px;}
+
+html { font-size: 125%;} /* sets baseline font size at 10px for easy font-size calcs */
+
+body {
+	font-family:Verdana, Arial, sans-serif; 
+	font-size: 50%; /* sets baseline font size at 10px for easy font-size calcs */
+	width: 860px;
+	margin: 10px auto;
+	background: #d1d797;
+}
+
+h1, h2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	margin-left: 160px;
+/*	text-shadow: 3px 3px 2px #903010; */
+}
+h1 {
+	font-size: 3.5em;
+	padding-top: 30px;
+	padding-bottom: .5em;
+}
+h2 {
+	font-size: 2.4em;
+	padding: 10px;
+}
+h3 {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 1.4em;
+	padding: 1em 0 .6em 0;
+}
+
+p, code, label {
+	font-size: 1.4em;
+	line-height: 125%;
+	padding-bottom: .5em;
+}
+
+code { font-size: 1.4em; }
+
+.center { text-align: center; }
+
+#wrapper {
+	background: #fff;
+}
+
+/* Content Box */
+#content {  	
+	width: 600px;
+	float: left;
+	padding: 0 12px 10px 12px;
+	background: #fff;
+	border: 1pt solid #000;
+}
+
+#content h2 {
+	margin: 20px 0 0 0;
+	padding: 5px 10px;
+}
+
+#content #form_box p {
+	font-weight: bold;
+	color: #227;
+	margin-top: 15px;
+}
+
+#content [type=submit] {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+#content img {
+	margin: 15px;
+	border: 1px solid #000;
+}
+
+#content ol { padding-top: .8em; }
+
+#content ol li {
+	font-size: 1.4em;
+	margin-left: 1.5em;
+	padding-bottom: .8em;
+}
+
+#content #form_box, #notes {
+	border: 1px solid #d1d797;
+	margin: 10px 0;
+	padding: 5px 10px;
+}
