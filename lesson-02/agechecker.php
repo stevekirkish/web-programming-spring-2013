@@ -3,10 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>CS 53.11B: Steve Kirkish Homepage</title>
-<link rel="icon" href="images/favicon-hw.ico" type="image/x-icon">
+<link rel="icon" href="../images/favicon-hw.ico" type="image/x-icon">
 <link rel="stylesheet" href="css/agechecker.css" type="text/css" media="all">
 </head>
-
 
 <body>
 <section id="wrapper">

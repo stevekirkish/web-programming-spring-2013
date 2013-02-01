@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CS 55.11: Steve Kirkish Homepage</title>
+<title>CS 53.11B: Steve Kirkish Homepage</title>
 <link rel="icon" href="images/favicon-hw.ico" type="image/x-icon">
 <link rel="stylesheet" href="css/main_css.css" type="text/css" media="all">
 
@@ -10,6 +10,7 @@
 
 
 </head>
+
 
 <body>
 <section id="wrapper">
@@ -31,36 +32,13 @@
    	  <li><a href="#">Exercises</a>
       	<ul>
         	<li><a href="exercises_other/welcome_call.html">PHP Form Sample</a></li>
-        
+        	<li><a href="exercises_class/lesson-02/agechecker.php">Age Checker</a></li>
         </ul>
       </li>
     
-    
-    
    	  <li><a href="#">Project</a></li>
     </ul>
-<!--    
-    <div class="button">
-   	  <a class="roll" href="../projects/project2/naptime.html">Project 2</a>
-    </div>
-    
-    <div class="button">
-   	  <a class="roll" href="../projects/project3/project3.html">Project 3</a>
-    </div>
-    
-    <div class="button">
-   	  <a class="roll" href="../projects/project4/project4.html">Project 4</a>
-    </div>
-    
-    <div class="button">
-   	  <a class="roll" href="../projects/project5/project5.html">Project 5</a>
-    </div>
-    
-    <div class="button">
-   	  <a class="roll" href="../projects/project6/project6.html">Project 6</a> 
-    </div>
--->  
-    
+   
 </section>
 
 <section id="content">
@@ -83,9 +61,9 @@ I've completed CS 50.11B and CS 50.11C (HTML5 and CSS3 courses), and CS55.11 (Ja
 <div id="form_box">
 <FORM ACTION="index.php" METHOD=POST>
 <h3>Enter a Person's Birthdate to calculate their age: </h3>
-<label>Month: </label><input type=text size=2 placeholder="nn" name="month">
-<label>Day: </label><input type=text size=2 placeholder="nn" name="day">
-<label>Year: </label><input type=text size=4 placeholder="nnnn" name="year">
+<label>Month: </label><input type=text size=2 placeholder="mm" name="month">
+<label>Day: </label><input type=text size=2 placeholder="dd" name="day">
+<label>Year: </label><input type=text size=4 placeholder="yyyy" name="year">
 <br><br>
 
 <INPUT TYPE=SUBMIT VALUE="ENTER">
@@ -112,53 +90,62 @@ function age($birthdate) {
 	return(strtotime('now') - strtotime($birthdate))/(60*60*24*365.25);
 }
 
-// Assign local vars to passed input date values, make them integers
-$yearInput = intval($_POST['year']);
-$monthInput = intval($_POST['month']);
-$dayInput = intval($_POST['day']);
-
-if ($yearInput || $monthInput || $dayInput) {
-	$dateInput = makeDate($yearInput, $monthInput, $dayInput);
-}
-
-// If some sort of date was input, and it was valid...
-if (($dateInput) && ($dateInput != "0")) {
-	echo "<p>Formatted birthdate is ".$dateInput."</p>";
+// Before loading the webpage, check to see if INPUTs have posted values
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	// Assign local vars to passed input date values, make them integers
+	$yearInput = intval($_POST['year']);
+	$monthInput = intval($_POST['month']);
+	$dayInput = intval($_POST['day']);
 	
-	$age = age($dateInput);
-	
-	$ageYears = intval($age);
-	$ageMonths = ($age - $ageYears) * 12;
-	$ageDays = ($ageMonths - intval($ageMonths)) * 30;
-	
-	echo ("<p>The person's age is $date: $ageYears years, ".intval($ageMonths)." months, ".intval($ageDays)." days</p>");
-	
-	if (($age < 18) && ($age > 0)) {
-		?>
-		<h3>Sorry, too young to vote or drink for now.</h3>
-		<?php
-	} else if ($age > 21) {
-		?>
-		<h3>Hey, they are old enough to drink!</h3>
-		<?php
-	} else if ($age > 18) {
-		?>
-		<h3>Hey, they are old enough to vote!</h3>
-		<?php
-	} else {
-		?>
-		<h3>Sorry, you entered a birthdate in the future. Please re-enter the date.</h3>
-        <?php
+	if ($yearInput || $monthInput || $dayInput) {
+		$dateInput = makeDate($yearInput, $monthInput, $dayInput);
 	}
-
-} elseif ($dateInput == "0") {	// Input Date Values not Valid
-	echo '<h2>Please Re-enter Valid Birthdate</h2>';
+	
+	// If some sort of date was input, and it was valid...
+	if (($dateInput) && ($dateInput != "0")) {
+		
+//		echo "<p>Formatted birthdate is ".$dateInput."</p>";
+		
+		$age = age($dateInput);
+		
+		$ageYears = intval($age);
+		$ageMonths = ($age - $ageYears) * 12;
+		$ageDays = ($ageMonths - intval($ageMonths)) * 30;
+		
+//		echo ("<p>The person's age is: $ageYears years, ".intval($ageMonths)." months, ".intval($ageDays)." days</p>");
+		
+		?>
+        
+		<p>The person's age is: <?php echo $ageYears ?> years, <?php echo intval($ageMonths) ?> months, <?php echo intval($ageDays) ?> days</p>
+        
+        <?php
+		
+		if (($age < 18) && ($age > 0)) {
+			?>
+			<h3>Sorry, too young to vote or drink for now.</h3>
+			<?php
+		} else if ($age > 21) {
+			?>
+			<h3>Hey, they are old enough to drink!</h3>
+			<?php
+		} else if ($age > 18) {
+			?>
+			<h3>Hey, they are old enough to vote!</h3>
+			<?php
+		} else {
+			?>
+			<h3>Sorry, you entered a birthdate in the future. Please re-enter the date.</h3>
+			<?php
+		}
+	
+	} elseif ($dateInput === "0") {	// Input Date Values not Valid
+		echo '<h3>Please Re-enter Valid Birthdate</h3>';
+	}
 }
-
 ?>
 </div>
 
-
+<p>This Age Checker doesn't swap between form and response. Here is a link to an exercise that does this swap: <a href="exercises_class/lesson-02/agechecker.php">Age Checker</a>.</p>
 
 </section>
 </section>
@@ -168,4 +155,5 @@ if (($dateInput) && ($dateInput != "0")) {
 </section>
 
 </body>
+
 </html>
