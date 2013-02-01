@@ -48,6 +48,8 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 	
 	if ($yearInput || $monthInput || $dayInput) {
 		$dateInput = makeDate($yearInput, $monthInput, $dayInput);
+	} else {	// Date fields empty
+		echo '<h3>Please Enter a Birthdate.</h3>';
 	}
 	
 	// Output Phrases, based on input date string and calculated age
@@ -85,8 +87,6 @@ if (($_SERVER['REQUEST_METHOD'] === 'POST')) {
 		}
 	} elseif ($dateInput === "0") {	// Input Date Values not Valid
 		echo '<h3>Please Re-enter a Valid Birthdate</h3>';
-	} else {	// No date values entered, $dateInput is NULL.
-		echo '<h3>Please Enter a Birthdate.</h3>';
 	}
 // 	"New Birthdate" button submit issues GET to recall cleared birthdate form
 	?>
