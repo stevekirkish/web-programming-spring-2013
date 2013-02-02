@@ -43,6 +43,10 @@ code { font-size: 1.4em; }
 
 .center { text-align: center; }
 
+.clear {
+	clear: both;
+}
+
 #wrapper {
 	background: #fff;
 }
@@ -57,7 +61,7 @@ code { font-size: 1.4em; }
 }
 
 #content h2 {
-	margin: 20px 0 0 0;
+	margin: 10px 0 0 0;
 	padding: 5px 10px;
 }
 
@@ -67,9 +71,25 @@ code { font-size: 1.4em; }
 	margin-top: 15px;
 }
 
-#content [type=submit] {
+#content [type=submit], #content button {
 	padding: 5px;
 	margin-bottom: 10px;
+}
+
+#content #header {
+	background: #e2edaf;
+	margin-top: 10px;
+}
+
+#content #header h2{
+	float: left;
+}
+#content button {
+	margin: 10px 0 10px 370px;
+}
+#content button a{
+	text-decoration: none;
+	color: #000;
 }
 
 #content img {

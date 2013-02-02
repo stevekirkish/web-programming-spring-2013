@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CS 53.11B: Steve Kirkish Homepage</title>
+<title>CS 53.11B: Age Checker Exercise</title>
 <link rel="icon" href="../images/favicon-hw.ico" type="image/x-icon">
 <link rel="stylesheet" href="css/agechecker.css" type="text/css" media="all">
 </head>
@@ -11,9 +11,12 @@
 <section id="wrapper">
 
 <section id="content">
-
-<h2 style="background: #e2edaf;">Age Checker</h2>
-<div id="form_box">
+<div id="header">
+    <h2>Age Checker</h2>
+    <button type="button"><a href="../../index.php">Home</a></button>
+</div>  
+  
+<div id="form_box" class="clear">
 
 <?php
 
