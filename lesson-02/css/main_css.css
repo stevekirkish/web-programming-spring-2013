@@ -23,7 +23,7 @@ h1 {
 	padding-top: 30px;
 	padding-bottom: .5em;
 }
-h2 {
+h2, h4 {
 	font-size: 2.4em;
 	padding: 10px;
 }
@@ -40,6 +40,10 @@ p, code, label {
 }
 
 code { font-size: 1.4em; }
+
+.boldtype {
+	font-weight: bold;
+}
 
 .center { text-align: center; }
 
@@ -79,14 +83,20 @@ header {
 	background: #fff;  
 }
 
-#content h2 {
+#content h4 {
 	margin: 20px 0 0 0;
-	padding: 5px;
+	padding: 5px 10px;
+	background: #e2edaf;
+	font-size: 1.6em;
 }
 
 #content [type=submit] {
 	padding: 3px 5px;
 	margin-bottom: 10px;
+}
+#content [type=radio]+label {
+	padding: 0 3px;
+	vertical-align: top;
 }
 
 #content img {
@@ -102,11 +112,16 @@ header {
 	padding-bottom: .8em;
 }
 
-#content #form_box {
+#content #agecalc {
+	margin-bottom: 10px;
+}
+
+#content .form_box, #notes {
 	border: 1px solid #d1d797;
 	margin: 10px 0;
-	padding: 5px;
+	padding: 5px 10px;
 }
+
 
 #thumbs {
 	margin: 0 auto;

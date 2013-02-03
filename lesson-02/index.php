@@ -56,9 +56,9 @@ I've completed CS 50.11B and CS 50.11C (HTML5 and CSS3 courses), and CS55.11 (Ja
 </p>
 
 <!-- Use POST method so that input value is not part of URL -->
-
-<h2 style="background: #e2edaf;">Some Personal Numbers...</h2>
-<div id="form_box">
+<div id="agecalc">
+<h4>Age Calculator</h4>
+<div class="form_box">
 <FORM ACTION="index.php" METHOD=POST>
 <h3>Enter a Person's Birthdate to calculate their age: </h3>
 <label>Month: </label><input type=text size=2 placeholder="mm" name="month">
@@ -66,7 +66,7 @@ I've completed CS 50.11B and CS 50.11C (HTML5 and CSS3 courses), and CS55.11 (Ja
 <label>Year: </label><input type=text size=4 placeholder="yyyy" name="year">
 <br><br>
 
-<INPUT TYPE=SUBMIT VALUE="ENTER">
+<INPUT TYPE=SUBMIT name="submit_age" VALUE="ENTER">
 </FORM>
 
 <?php
@@ -91,7 +91,7 @@ function age($birthdate) {
 }
 
 // Before loading the webpage, check to see if INPUTs have posted values
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_POST['submit_age'])) {  // If the AGE form submit button was clicked...
 	// Assign local vars to passed input date values, make them integers
 	$yearInput = intval($_POST['year']);
 	$monthInput = intval($_POST['month']);
@@ -146,6 +146,138 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <p>This Age Checker doesn't swap between form and response. Here is a link to an exercise that does this swap: <a href="exercises_class/lesson-02/agechecker.php">Age Checker</a>.</p>
+</div>
+
+<div id="volcalc">
+  <h4>Basic Geometry Calculator</h4>
+
+  <div class="form_box">
+  <?php 
+    // Initialize variables
+  	$error = "";
+	$dimType = array("Length", "Area", "Volume");
+	$unitPrefix = array("", "Square", "Cubic");
+
+	$dimValue = 1;
+    $inch_status = "checked";  // default selection on initial page load
+    $mm_status = "unchecked";
+    $cm_status = "unchecked";
+    $meter_status = "unchecked";
+	
+	if (isset($_POST['submit_calc'])) { // If the form submit button was clicked...
+
+		$length = floatval($_POST['length']);  // change $_POST string value to a number
+		$width = floatval($_POST['width']);    // Empty field or non-number return zero
+		$height = floatval($_POST['height']);
+		$units = $_POST['units'];  // $units contains which radio button was selected
+		$dimLevel = ($length > 0) + ($width > 0) + ($height > 0);
+		
+		if (($length < 0) || ($width < 0) || ($height < 0)) {
+			$error = "Please make sure no dimension values are negative.";
+		} else if ((!$length) && (!$width) && (!$height)) {
+			$error = "Please enter at least one non-zero dimension value.";
+		}
+		
+		// Calculate the Geometric Result: Can be length, area or volume.
+		if ($length > 0) {
+			$dimValue = $dimValue * $length;
+		}
+		if ($width > 0) {
+			$dimValue = $dimValue * $width;
+		}
+		if ($height > 0) {
+			$dimValue = $dimValue * $height;
+		}
+		
+		// Compute result values, set selected radio button as checked
+		// When page is reloaded, selected radio button must be marked as checked.
+		switch ($units) {
+			case 'inch':
+			  $inch_status = "checked";
+			  $resultEngIn = $dimValue;
+			  $resultEngFt = $dimValue / pow(12, $dimLevel);
+			  $resultMetMm = $dimValue * pow(25.4, $dimLevel);
+			  $resultMetM = $dimValue * pow(0.0254, $dimLevel);
+			  break;
+			case 'mm':
+			  $mm_status = "checked";
+			  $resultEngIn = $dimValue / pow(25.4, $dimLevel);
+			  $resultEngFt = $dimValue / pow((12*25.4), $dimLevel);
+			  $resultMetMm = $dimValue;
+			  $resultMetM = $dimValue / pow(1000, $dimLevel);
+			  break;
+			case 'cm':
+			  $cm_status = "checked";
+			  $resultEngIn = $dimValue / pow(2.54, $dimLevel);
+			  $resultEngFt = $dimValue / pow((12*2.54), $dimLevel);
+			  $resultMetMm = $dimValue;
+			  $resultMetM = $dimValue / pow(100, $dimLevel);
+			  break;
+			case 'm':
+			  $meter_status = "checked";
+			  $resultEngIn = $dimValue / pow(0.0254, $dimLevel);
+			  $resultEngFt = $dimValue / pow((12*0.0254), $dimLevel);
+			  $resultMetMm = $dimValue * pow(1000, $dimLevel);
+			  $resultMetM = $dimValue;
+			  break;
+		}
+	}
+  
+  ?>
+
+    <form action="#volcalc" name="measurements" method=POST>
+      <h3>Compute Length, Area or Volume</h3>
+      <p class="boldtype">Enter at least one of the following values:</p>
+      <label>Length: </label><input type=text size=4 name="length">
+      <label>Width: </label><input type=text size=4 name="width">
+      <label>Height: </label><input type=text size=4 name="height">
+      <br><br>
+       <input name="units" type="radio" value="inch" <?php echo $inch_status ?>><label>inches</label>
+      <input name="units" type="radio" value="mm" <?php echo $mm_status ?>><label>mm</label>
+      <input name="units" type="radio" value="cm" <?php echo $cm_status ?>><label>cm</label>
+      <input name="units" type="radio" value="m" <?php echo $meter_status ?>><label>meter</label>
+      <br><br>
+      <INPUT TYPE=SUBMIT name="submit_calc" VALUE="Calculate">
+    </form>
+    
+  <?php		// Output Results or Error Message
+  
+	if (isset($_POST['submit_calc'])) {
+		if (!$error) {
+
+			?>
+            
+<!-- Output concatenation of result + unit prefix (i.e. square, cubic) + unit
+     Units can be singular or plural - ternary operator is used here -->
+            
+            <h3>Results: Calculate the <?php print $dimType[$dimLevel-1] ?> </h3>
+            <p><?php print round($resultEngIn,4)." ".$unitPrefix[$dimLevel-1]." ".(($resultEngIn <= 1) ? "inch" : "inches") ?></p>
+            <p><?php print round($resultEngFt,4)." ".$unitPrefix[$dimLevel-1]." ".(($resultEngFt == 1) ? "foot" : "feet") ?></p>
+            <p><?php print round($resultMetMm,4)." ".$unitPrefix[$dimLevel-1]." mm" ?></p>
+            <p><?php print round($resultMetM,4)." ".$unitPrefix[$dimLevel-1]." ".(($resultMetM == 1) ? "meter" : "meters") ?></p>
+            <?php
+		} else {
+			?>
+            <h3><?php print $error ?></h3>
+            <?php
+		}
+	}
+?>
+<div id="notes">
+<h3>Some notes about this Exercise:</h3>
+<p>This code uses a variety of PHP techniques to automatically compute either length, area or volume based on how many values were filled in. User selects the desired units, and results are presented in both English and Metric systems. The code checks for valid inputs and generates error messages if needed.</p>
+<ol>
+	<li>Arrays simplify the output message formation, placing &quot;Length&quot;, &quot;Area&quot; or &quot;Volume&quot; in the result header and for a unit prefix (square, cubic), both based on the number of input vlaues entered.</li>
+    <li><code>isset($_POST[&quot;submit_calc&quot;])</code> is used to determine if the submit button for this form (as opposed to the Age form above,) was clicked.</li>
+    <li><code>switch-case</code> statements are used to determine proper calculations based on selected radio button.</li>
+    <li>Radio buttons were added to the form. They need special treatment: The selected radio button needs to be re-&quot;checked&quot; upon reload, so this is partially done in the <code>switch</code> code.</li>
+    <li>The <code>checked</code> and <code>unchecked</code> attributes are added dynamically to the <code>button</code> tags by PHP code.</li>
+    <li>String concatenation is used to form the result messages, combining the result value with a unit prefix and unit type (inch, foot, etc.) Additionally, a ternary operator is used within each message to select a singular or plural unit type (i.e. foot or feet, inch or inches).</li>
+</ol>
+
+</div>
+
+</div> <!-- END DIV volcalc -->
 
 </section>
 </section>
