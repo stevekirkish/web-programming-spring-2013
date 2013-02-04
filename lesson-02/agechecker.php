@@ -13,7 +13,7 @@
 <section id="content">
 <div id="header">
     <h2>Age Checker</h2>
-    <button type="button"><a href="../../index.php">Home</a></button>
+    <a href="../../index.php">Home</a>
 </div>  
   
 <div id="form_box" class="clear">
