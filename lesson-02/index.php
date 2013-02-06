@@ -250,11 +250,37 @@ function age($birthdate) {
 <!-- Output concatenation of result + unit prefix (i.e. square, cubic) + unit
      Units can be singular or plural - ternary operator is used here -->
             
+            
+            <table class="data_table">
+            	<tr>
+                	<td>Length: <?php print $length ?></td>
+                    <td>Width: <?php print $width ?></td>
+                    <td>Height: <?php print $height ?></td>
+                    <td><?php print $units ?></td>
+                </tr>
+            </table>
+            
             <h3>Results: Calculate the <?php print $dimType[$dimLevel-1] ?> </h3>
-            <p><?php print round($resultEngIn,4)." ".$unitPrefix[$dimLevel-1]." ".(($resultEngIn <= 1) ? "inch" : "inches") ?></p>
-            <p><?php print round($resultEngFt,4)." ".$unitPrefix[$dimLevel-1]." ".(($resultEngFt == 1) ? "foot" : "feet") ?></p>
-            <p><?php print round($resultMetMm,4)." ".$unitPrefix[$dimLevel-1]." mm" ?></p>
-            <p><?php print round($resultMetM,4)." ".$unitPrefix[$dimLevel-1]." ".(($resultMetM == 1) ? "meter" : "meters") ?></p>
+            
+            <table id="calcresults" class="data_table">
+              <tr>
+                <td><?php print number_format($resultEngIn,4) ?></td>
+                <td><?php print $unitPrefix[$dimLevel-1]." ".(($resultEngIn <= 1) ? "inch" : "inches") ?></td>
+              </tr>
+              <tr>
+                <td><?php print number_format($resultEngFt,4) ?></td>
+                <td><?php print $unitPrefix[$dimLevel-1]." ".(($resultEngFt == 1) ? "foot" : "feet") ?></td>
+              </tr>
+              <tr>
+                <td><?php print number_format($resultMetMm,4) ?></td>
+                <td><?php print $unitPrefix[$dimLevel-1]." mm" ?></td>
+              </tr>
+              <tr>
+                <td><?php print number_format($resultMetM,4) ?></td>
+                <td><?php print $unitPrefix[$dimLevel-1]." ".(($resultMetM == 1) ? "meter" : "meters") ?></td>
+              </tr>
+            </table>
+            
             <?php
 		} else {
 			?>

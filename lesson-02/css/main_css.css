@@ -122,6 +122,29 @@ header {
 	padding: 5px 10px;
 }
 
+#content .data_table {
+	width: 400px;
+	font-size: 1.4em;
+	border-top: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+#content .data_table td {
+	padding: 4px 6px;
+	margin: 0;
+	border-right: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	background: #eee;
+}
+
+#content table#calcresults td {
+	background: #fff;
+}
+#content table#calcresults td:first-child {
+	text-align: right;
+}
 
 #thumbs {
 	margin: 0 auto;
