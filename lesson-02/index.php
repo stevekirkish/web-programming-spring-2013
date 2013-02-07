@@ -72,6 +72,7 @@ I've completed CS 50.11B and CS 50.11C (HTML5 and CSS3 courses), and CS55.11 (Ja
 <?php
 
 $dateStr = "";
+define(MM2INCH, 25.4); // Trying out a CONSTANT here...
 
 // Convert individual date components into a single string value
 // First checks for valid input values
@@ -196,13 +197,13 @@ function age($birthdate) {
 			  $inch_status = "checked";
 			  $resultEngIn = $dimValue;
 			  $resultEngFt = $dimValue / pow(12, $dimLevel);
-			  $resultMetMm = $dimValue * pow(25.4, $dimLevel);
+			  $resultMetMm = $dimValue * pow(MM2INCH, $dimLevel);
 			  $resultMetM = $dimValue * pow(0.0254, $dimLevel);
 			  break;
 			case 'mm':
 			  $mm_status = "checked";
-			  $resultEngIn = $dimValue / pow(25.4, $dimLevel);
-			  $resultEngFt = $dimValue / pow((12*25.4), $dimLevel);
+			  $resultEngIn = $dimValue / pow(MM2INCH, $dimLevel);
+			  $resultEngFt = $dimValue / pow((12*MM2INCH), $dimLevel);
 			  $resultMetMm = $dimValue;
 			  $resultMetM = $dimValue / pow(1000, $dimLevel);
 			  break;
