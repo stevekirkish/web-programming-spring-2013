@@ -1,0 +1,174 @@
+/* CSS Document: CS55.11 Class Home pages */
+/* Relies on Bootstrap CSS for many styles */
+
+body {
+	background: #fff;  /*was #d1d797 */
+}
+
+h1, h2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+h1 {
+	font-size: 2.1em;
+	padding-top: 5px;
+}
+h2 {
+	font-size: 1.4em;
+	margin: 0;
+	line-height: 1.35em;
+}
+
+code {
+	font-family: "Courier New", Courier, monospace;
+	color: #690;
+	font-size: 1.2em;
+	line-height: 125%;
+	padding-bottom: .5em;
+	border: none;
+	background: none;
+}
+
+.center { text-align: center; }
+
+header {
+	padding: 0 8px;
+	/*	background: #d1d797;  was #d1d797e2edaf */
+	background: rgb(226,237,175); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(226,237,175,1) 8%, rgba(91,150,61,1) 95%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(8%,rgba(226,237,175,1)), color-stop(95%,rgba(91,150,61,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2edaf', endColorstr='#5b963d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+  header img  {
+	margin: 10px 20px 10px 10px;
+	-webkit-box-shadow: 4px 4px 3px 2px #486932;
+	box-shadow: 4px 4px 3px 2px #486932;
+}
+
+.input-tiny {
+  width: 55px;
+}
+
+/* Content Box */
+#content {  	
+	background: #fff;  
+}
+
+#content .row {
+	padding: 0 10px;
+}
+
+#content h3 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 1.4em;
+	font-style: italic;
+	margin-bottom: 0;
+}
+
+#content .accordion-group {
+	margin-bottom: 5px;
+}
+
+#content .span12 h4,
+#content .accordion-heading a {
+	margin: 0;
+	padding: 5px 10px;
+	background: #e2edaf;
+	font-size: 1.4em;
+	color: #000;
+	font-weight: bold;
+}
+#content .accordion-heading a:hover {
+	text-decoration: none;
+	color: #00C;
+}
+
+#content input {	/* was [type=submit] */
+	margin-top: 7px;
+	
+}
+
+#content img {
+	margin: 15px;
+	border: 1px solid #000;
+}
+
+#content #agecalc,
+#content #geocalc {
+	margin-bottom: 5px;
+}
+
+#content .form_box, .notes {
+	border: 1px solid #d1d797;
+	padding: 5px 10px; 
+}
+
+#content .data_table {
+	width: 100%;
+	font-size: 1.2em;
+	border-top: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+}
+
+#content .data_table th {
+	font-size: 0.9em;
+	border-right: 1px solid #aaa;
+	background: #eee;
+}
+#content .data_table td {
+	padding: 4px 6px;
+	margin: 0;
+	border-right: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	text-align: center;
+	background: #fff;
+}
+
+#calcresults td:first-child  {
+	width: 70%;
+	color: #00C;
+	text-align: right;
+}
+
+#content table#calcresults td {
+	background: #fff;
+}
+
+
+footer {
+	clear: both;
+	margin: 0;
+	padding: 4px 6px;
+	margin-top: 20px;
+	color: #fff;
+	
+	background: rgb(226,237,175); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(91,150,61,1) 8%, rgba(226,237,175,1) 95%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(8%,rgba(91,150,61,1)), color-stop(95%,rgba(226,237,175,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  rgba(91,150,61,1) 8%,rgba(226,237,175,1) 95%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  rgba(91,150,61,1) 8%,rgba(226,237,175,1) 95%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  rgba(91,150,61,1) 8%,rgba(226,237,175,1) 95%); /* IE10+ */
+	background: linear-gradient(135deg,  rgba(91,150,61,1) 8%,rgba(226,237,175,1) 95%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b963d', endColorstr='#5b963de2edaf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+/* Aslett clearing method used for Contentarea */
+.clearfix:after {
+	content:".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix { display: inline-block; }
+/* backslash hack hides from IE mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* end backslash hack */
