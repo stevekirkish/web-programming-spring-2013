@@ -17,10 +17,10 @@
  <header class="jumbotron subhead">
 
     <div class="row">
-      <div class="span3 offset1">
-    <img src="images/Steve_headshot.jpg" width="150" height="150" alt="Steve Kirkish headshot" class="img-circle">
+      <div class="span3">
+    <img src="images/Steve_headshot.jpg" width="150" height="150" alt="Steve Kirkish headshot">
       </div>
-      <hgroup class="span8">
+      <hgroup class="span9">
           <h1>Steve Kirkish</h1>
 	      <h2>CS 53.11b | Spring 2013</h2>
           <h2>Advanced Web Programming with PHP/MySQL</h2>
@@ -74,10 +74,18 @@
 <!-- - - - - - - - - - - - - - - - - - - - - - -
      AGE CALCULATOR
      - - - - - - - - - - - - - - - - - - - - - - -->
-<h3>Exercises</h3>
+<h3>About this Home Page...</h3>
 <p>This page is styled with the help of twitter Bootstrap, using its responsive features. It has been scratch-built and formatted to work with a variety of screen widths. So far, I have tested it successfully on a wide-screen laptop, an iPad3 in both orientations, and an iPhone 5 in both orientations. I would love to hear feedback of what other platforms show.</p>
 <p>Some Bootstrap features used include the basic scaffolding and the collapsing title-bars seen below. Custom CSS was created to modify various styles (fonts, block margin and padding tweaks, gradient additions, etc.) For the collapsing title-bars, I built and installed a ternary php expression to reopen a section where a form had been submitted. Without this extra code, the page reloads with all tabs closed, which could confuse a user.</p>
-
+<h3>CSS3-based Features</h3>
+<ul>
+	<li>Gradient in the header, with RGBA</li>
+    <li>Border-rounding on the image and header block</li>
+    <li>Box-shadow on the image</li>
+    <li>Box-shadow (inset) on the header block elements for a 3D effect</li>
+    <li>@font-face used to specify a non-system font</li>
+</ul>
+<h3>Exercises</h3>
 <p><em>Click a title-bar to open or close any exercise.</em></p>
 <div class="accordion" id="accord_exer">
  <div class="accordion-group">

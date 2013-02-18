@@ -5,18 +5,24 @@ body {
 	background: #fff;  /*was #d1d797 */
 }
 
+@font-face {
+	font-family: headerFont;
+	src: url('../fonts/ResagokrBold.otf');
+}
+
 h1, h2 {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: headerFont, "Trebuchet MS", Arial, Helvetica, sans-serif;
 	font-weight: bold;
 }
 h1 {
-	font-size: 2.1em;
+	font-size: 2.4em;
 	padding-top: 5px;
+	letter-spacing: .1em;
 }
 h2 {
-	font-size: 1.4em;
-	margin: 0;
+	font-size: 1.5em;
 	line-height: 1.35em;
+	margin: auto;
 }
 
 code {
@@ -32,7 +38,14 @@ code {
 .center { text-align: center; }
 
 header {
-	padding: 0 8px;
+	background: #70a;
+	box-shadow: inset 0 10px 100px #c8e,  /* #f00 */
+				inset 0px 5px 100px #94c; /* -20px -30px 50px #044 */
+}
+
+header div.row{
+	padding: 0 12px;
+	border-radius: 0 500px 250px 0;
 	/*	background: #d1d797;  was #d1d797e2edaf */
 	background: rgb(226,237,175); /* Old browsers */
 	background: -moz-linear-gradient(-45deg,  rgba(226,237,175,1) 8%, rgba(91,150,61,1) 95%); /* FF3.6+ */
@@ -42,11 +55,20 @@ header {
 	background: -ms-linear-gradient(-45deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* IE10+ */
 	background: linear-gradient(135deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2edaf', endColorstr='#5b963d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	
+	box-shadow: inset 0 0 150px rgba(91,150,61,1),  /* #f00 */
+				inset -20px -15px 50px #689; /* -20px -30px 50px #044 */
 }
   header img  {
 	margin: 10px 20px 10px 10px;
 	-webkit-box-shadow: 4px 4px 3px 2px #486932;
 	box-shadow: 4px 4px 3px 2px #486932;
+	-webkit-border-radius: 55px;
+	border-radius: 55px; 
+}
+
+hgroup {
+	margin-bottom: 15px;
 }
 
 .input-tiny {
