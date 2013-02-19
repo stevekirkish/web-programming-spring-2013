@@ -27,7 +27,7 @@ h2 {
 
 code {
 	font-family: "Courier New", Courier, monospace;
-	color: #690;
+	color: #340;
 	font-size: 1.2em;
 	line-height: 125%;
 	padding-bottom: .5em;
@@ -55,9 +55,10 @@ header div.row{
 	background: -ms-linear-gradient(-45deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* IE10+ */
 	background: linear-gradient(135deg,  rgba(226,237,175,1) 8%,rgba(91,150,61,1) 95%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2edaf', endColorstr='#5b963d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	
-	box-shadow: inset 0 0 150px rgba(91,150,61,1),  /* #f00 */
-				inset -20px -15px 50px #689; /* -20px -30px 50px #044 */
+	/* box-shadow: (inset) horiz vert blur spread color */
+	box-shadow: inset 0 0 150px rgba(91,150,61,1),
+				inset -25px -15px 40px #578,
+				inset -10px -7px 15px #c08;
 }
   header img  {
 	margin: 10px 20px 10px 10px;
@@ -160,6 +161,49 @@ hgroup {
 
 #content table#calcresults td {
 	background: #fff;
+}
+
+/* - - CSS3 Transition: Expand thumbnail to full image - - */
+
+div#css3-trans {
+	border: 1px solid black;
+	overflow: hidden;  /* Crops image in thumb view*/
+	width:125px;
+	height:125px;
+	margin: 10px auto;
+	transition:width 2s, height 2s;
+	-moz-transition:width 2s, height 2s; /* Firefox 4 */
+	-webkit-transition:width 2s, height 2s; /* Safari and Chrome */
+	-o-transition:width 2s, height 2s; /* Opera */
+}
+div#css3-trans:hover {
+	width: 400px;	/* Set to desired max container size (override bootstrap) */
+	height: 300px;	/* Set to desired max container size (override bootstrap) */
+}
+div#css3-trans img {
+	width: 400px;	/* Set to desired max image size (override bootstrap) */
+	height: 300px;	/* Set to desired max image size (override bootstrap) */
+	max-width: none;	/* override bootstrap */
+	margin: -45px 0 0 -90px;  /* offset image to select where to peek */
+	transition: margin 2s;
+	-moz-transition: margin 2s; /* Firefox 4 */
+	-webkit-transition: margin 2s; /* Safari and Chrome */
+	-o-transition: margin 2s; /* Opera */
+}
+div#css3-trans img:hover {
+	margin: 0;
+}
+/* Limit max size of image if screen size is small */
+@media (max-width: 480px) {
+	div#css3-trans:hover {
+		width: 276px;
+		height: 207px;
+	}
+	div#css3-trans img {
+		width: 276px;	/* override bootstrap */
+		height: 207px;	/* override bootstrap */
+		margin: -52px 0 0 -69px;
+	}
 }
 
 

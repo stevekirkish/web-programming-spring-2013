@@ -71,9 +71,6 @@
   </div>  <!-- / #identity.span12 -->
 </div>  <!-- / #identity.row -->
 
-<!-- - - - - - - - - - - - - - - - - - - - - - -
-     AGE CALCULATOR
-     - - - - - - - - - - - - - - - - - - - - - - -->
 <h3>About this Home Page...</h3>
 <p>This page is styled with the help of twitter Bootstrap, using its responsive features. It has been scratch-built and formatted to work with a variety of screen widths. So far, I have tested it successfully on a wide-screen laptop, an iPad3 in both orientations, and an iPhone 5 in both orientations. I would love to hear feedback of what other platforms show.</p>
 <p>Some Bootstrap features used include the basic scaffolding and the collapsing title-bars seen below. Custom CSS was created to modify various styles (fonts, block margin and padding tweaks, gradient additions, etc.) For the collapsing title-bars, I built and installed a ternary php expression to reopen a section where a form had been submitted. Without this extra code, the page reloads with all tabs closed, which could confuse a user.</p>
@@ -85,13 +82,18 @@
     <li>Box-shadow (inset) on the header block elements for a 3D effect</li>
     <li>@font-face used to specify a non-system font</li>
 </ul>
+<p>Also build CSS3 Transition cold to create a thumbnail to image viewer. Refer to the exercise below to see it in action.</p>
 <h3>Exercises</h3>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - -
+     AGE CALCULATOR
+     - - - - - - - - - - - - - - - - - - - - - - -->
 <p><em>Click a title-bar to open or close any exercise.</em></p>
 <div class="accordion" id="accord_exer">
  <div class="accordion-group">
   <div class="accordion-heading">
    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accord_exer" href="#collapseAge">
-     Age Calculator
+     Age Calculator (PHP)
    </a>
   </div>
   <div id="collapseAge" class="accordion-body collapse <?php echo (isset($_POST['submit_age']) ? "in" : "") ?>"> <!-- Reopens AgeCalc's Accordian tab on reload -->
@@ -189,12 +191,12 @@
 </div>
 
 <!-- - - - - - - - - - - - - - - - - - - - - - -
-     GEOMETRY CALCULATOR
+     EXERCISE: GEOMETRY CALCULATOR
      - - - - - - - - - - - - - - - - - - - - - - -->
  <div class="accordion-group">
   <div class="accordion-heading">
    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accord_exer" href="#collapseGeo">
-     Basic Geometry Calculator 
+     Basic Geometry Calculator (PHP)
    </a>
   </div>
   <div id="collapseGeo" class="accordion-body collapse <?php echo (isset($_POST['submit_calc']) ? "in" : "") ?>"> <!-- Reopens GeoCalc's Accordian tab on reload -->
@@ -369,7 +371,49 @@
 </div>  <!-- END DIV #collapseGeo.accordian_body.collapse -->
 
 </div>  <!-- END accordian_group -->
+
+<!-- - - - - - - - - - - - - - - - - - - - - - -
+     EXERCISE: GEOMETRY CALCULATOR
+     - - - - - - - - - - - - - - - - - - - - - - -->
+ <div class="accordion-group">
+  <div class="accordion-heading">
+   <a class="accordion-toggle" data-toggle="collapse" data-parent="#accord_exer" href="#collapseImgTrans">
+     CSS3 Transitions: Expand Thumbnail to Full Image
+   </a>
+  </div>
+  <div id="collapseImgTrans" class="accordion-body collapse">
+   <div class="accordion-inner">
+    <div id="imgTrans" class="row-fluid">
+     <div class="form_box span7">
+       <h5>Hover over the image below to see the full picture</h5>
+       <p><em>(Note: Will not transition with Internet Explorer)</em></p>
+       <div id="css3-trans">
+		<img src="images/Hyatt_Scenic_Sunrise_1.jpg" alt="Grand Hyatt Poipu, Kauai, Hawaii"> 
+       </div>
+       <p>This exercise uses CSS3 transition properties to move certain style properties from one set of values to another set of values. Here, two HTML elements are controlled. An image-containing DIV is set to thumbnail-sized dimensions, with a full sized image inside. The <code>overflow: hidden</code>  property crops the image. When the mouse hovers over the image, transition effects change the DIV size to full image size. The image is also shifted to remain inside the DIV box; initial margin values determine which part of the image peeks through the thumbnail-seized window.</p>
+     </div>   <!--  END DIV .form_box.span6 -->
+     <div class="notes span5">
+	   <h4>Some notes about this Exercise:</h4>
+       <ol>
+         <li>When using Bootstrap with a dedicated CSS file, unexpected results may occur. This happens when Bootstrap styles a tag that is further styled in the dedicated CSS. When the page doesn't look as expected, search Bootstrap for the tag(s) in question - you may need to reset (unmodify) certain properties to ensure correct results. To troubleshoot the problem, separate out the code bit (with it's CSS, but no bootstrap) to get it working first.</li>
+         <li><code>@media (max-width: 480px)</code> was used to limit the expanded image size for smaller screeens (i.e. iPhone) so they don't grow past the edge of the page.</li>
+       </ol>
+     </div>   <!--  END DIV .form_box.span6 -->
+    </div>   <!-- END DIV #imgTrans.row-fluid -->
+   </div>   <!-- END DIV accordian-inner -->
+  </div>  <!-- END DIV #collapseImgTrans.accordian_body.collapse -->
+
+ </div>  <!-- END accordian_group -->
 </div>  <!-- END div#accord_exer .accordian -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 </section>  <!-- END #content.container-fluid -->
 <!-- </section> -->
 
