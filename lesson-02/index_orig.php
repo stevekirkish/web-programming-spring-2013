@@ -59,7 +59,7 @@ I've completed CS 50.11B and CS 50.11C (HTML5 and CSS3 courses), and CS55.11 (Ja
 <div id="agecalc">
 <h4>Age Calculator</h4>
 <div class="form_box">
-<FORM ACTION="index.php" METHOD=POST>
+<FORM ACTION="<?php $_SERVER['PHP_SELF'] ?>#agecalc" METHOD=POST>
 <h3>Enter a Person's Birthdate to calculate their age: </h3>
 <label>Month: </label><input type=text size=2 placeholder="mm" name="month">
 <label>Day: </label><input type=text size=2 placeholder="dd" name="day">
@@ -161,9 +161,9 @@ function age($birthdate) {
 
 	$dimValue = 1;
     $inch_status = "checked";  // default selection on initial page load
-    $mm_status = "unchecked";
-    $cm_status = "unchecked";
-    $meter_status = "unchecked";
+    $mm_status = "";
+    $cm_status = "";
+    $meter_status = "";
 	
 	if (isset($_POST['submit_calc'])) { // If the form submit button was clicked...
 
@@ -226,7 +226,7 @@ function age($birthdate) {
   
   ?>
 
-    <form action="#volcalc" name="measurements" method=POST>
+    <form action="<?php $_SERVER['PHP_SELF'] ?>#volcalc" name="measurements" method=POST>
       <h3>Compute Length, Area or Volume</h3>
       <p class="boldtype">Enter at least one of the following values:</p>
       <label>Length: </label><input type=text size=4 name="length">
@@ -303,7 +303,7 @@ function age($birthdate) {
 </ol>
 
 </div>
-
+</div>
 </div> <!-- END DIV volcalc -->
 
 </section>

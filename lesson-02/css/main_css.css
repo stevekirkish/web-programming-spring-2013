@@ -8,7 +8,7 @@ body {
 	font-family:Verdana, Arial, sans-serif; 
 	font-size: 50%; /* sets baseline font size at 10px for easy font-size calcs */
 	width: 860px;
-	margin: 10px auto;
+	margin: 10px auto; 
 	background: #d1d797;
 }
 
@@ -33,13 +33,21 @@ h3 {
 	padding: 1em 0 .6em 0;
 }
 
-p, code, label {
+p, label {
 	font-size: 1.4em;
 	line-height: 125%;
 	padding-bottom: .5em;
 }
 
-code { font-size: 1.4em; }
+code {
+	font-family: "Courier New", Courier, monospace;
+	color: black;
+	font-size: 1.2em;
+	line-height: 125%;
+	padding-bottom: .5em;
+	border: none;
+	background: none;
+}
 
 .boldtype {
 	font-weight: bold;
@@ -57,6 +65,10 @@ header {
 	  margin: 10px 20px 10px 10px;
 	  box-shadow: 4px 4px 3px #666;
   }
+
+section, header {
+	display: block;
+}
 
 #wrapper {
 	border: 1pt solid #000;
