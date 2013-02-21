@@ -184,6 +184,7 @@ div#css3-trans img {
 	width: 400px;	/* Set to desired max image size (override bootstrap) */
 	height: 300px;	/* Set to desired max image size (override bootstrap) */
 	max-width: none;	/* override bootstrap */
+	border: 0;
 	margin: -45px 0 0 -90px;  /* offset image to select where to peek */
 	transition: margin 2s;
 	-moz-transition: margin 2s; /* Firefox 4 */
@@ -194,15 +195,20 @@ div#css3-trans img:hover {
 	margin: 0;
 }
 /* Limit max size of image if screen size is small */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
+	div#css3-trans {
+		width:80px;
+		height:80px;
+	}
 	div#css3-trans:hover {
-		width: 276px;
-		height: 207px;
+		width: 232px;
+		height: 174px;
+		border: 2px solid #30F;
 	}
 	div#css3-trans img {
-		width: 276px;	/* override bootstrap */
-		height: 207px;	/* override bootstrap */
-		margin: -52px 0 0 -69px;
+		width: 232px;	/* override bootstrap 276px */
+		height: 174px;	/* override bootstrap */
+		margin: -23px 0 0 -35px;
 	}
 }
 

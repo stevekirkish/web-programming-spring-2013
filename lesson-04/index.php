@@ -384,7 +384,7 @@
   <div id="collapseImgTrans" class="accordion-body collapse">
    <div class="accordion-inner">
     <div id="imgTrans" class="row-fluid">
-     <div class="form_box span7">
+     <div class="span7">
        <h5>Hover over the image below to see the full picture</h5>
        <p><em>(Note: Will not transition with Internet Explorer)</em></p>
        <div id="css3-trans">
