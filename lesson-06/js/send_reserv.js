@@ -18,7 +18,7 @@ $(document).ready(function () {
 		numDays = Math.round((depDate - arvDate) / 60000 / 60 / 24);
 		$("div#dateMsg").html('');
 
-		console.log ("Arrival: "+monthArv+"/"+dayArv+"/"+yearArv+", Depart: "+monthDep+"/"+dayDep+"/"+yearDep+", Arrive Date: "+arvDate+", Depart Date: "+depDate+", Number of Days: "+numDays);
+//		console.log ("Arrival: "+monthArv+"/"+dayArv+"/"+yearArv+", Depart: "+monthDep+"/"+dayDep+"/"+yearDep+", Arrive Date: "+arvDate+", Depart Date: "+depDate+", Number of Days: "+numDays);
 		// Output a message under the Date Select fields
 		if (arvDate >= depDate) {
 			$("div#dateMsg").html('<h5>Please make sure departure date follows arrival date.</h5>');
@@ -41,7 +41,7 @@ $(document).ready(function () {
 			dayAmt = 31;
 		}
 		dateCompare();  // Compare Arrive and Depart Dates to ensure depart follows
-		console.log ("Month Num: " + monthArv + ", Number of Days: " + dayAmt);
+//		console.log ("Month Num: " + monthArv + ", Number of Days: " + dayAmt);
 		// Fill options for Day Select based on Month
 		$("select#arv_day").html('<option value="">Day</option>');
 		for (ii = 1; ii <= dayAmt; ii += 1) {
@@ -58,7 +58,7 @@ $(document).ready(function () {
 			yearIncr = 1,
 			selectLeap = "Select",
 			ii;
-		console.log ("Month Num: " + monthArv + ", Day Number: " + dayArv);
+//		console.log ("Month Num: " + monthArv + ", Day Number: " + dayArv);
 
 		dateCompare();  // Compare Arrive and Depart Dates to ensure depart follows
 		// If Feb 29 is selected, force year options to be leap years
@@ -161,7 +161,7 @@ $(document).ready(function () {
 		arriveDate = monthArv + " " + $("select#arv_day").val() + ", " + $("select#arv_year").val();
 		departDate = monthDep + " " + $("select#dep_day").val() + ", " + $("select#dep_year").val();
 
-		console.log ("Arrive: " + arriveDate + ", Depart: " + departDate);
+//		console.log ("Arrive: " + arriveDate + ", Depart: " + departDate);
 
 		$(".requests:checked").each(function (index) {
 			requests[index] = $(this).closest('label').text();
@@ -175,7 +175,7 @@ $(document).ready(function () {
 			departure : departDate,
 			requests : requests
 		};
-		console.log (contact);
+//		console.log (contact);
 		$.ajax({
 			type : "POST",
 			url : "php/send-reserv.php",  // location relative to page, not JS
@@ -183,7 +183,6 @@ $(document).ready(function () {
 		}).done(function () {	// What do we want to do when AJAX request is sent
 			alert("Your contact information has been sent. We will contact you soon.");
 		});
-		alert(contact.clientname);
-		console.log(contact);
+//		alert(contact.clientname);
 	});
 });
