@@ -177,12 +177,22 @@ $(document).ready(function () {
 		};
 //		console.log (contact);
 		$.ajax({
+//			ajaxSuccess: function () {
+//				alert("AJAX was successful.");
+//				console.log("AJAX was successful.");
+//			},
+//			complete: function () {
+//				console.log("AJAX is complete.");
+//			},
 			type : "POST",
 			url : "php/send-reserv.php",  // location relative to page, not JS
 			data : contact	// Put the data into the AJAX request
 		}).done(function () {	// What do we want to do when AJAX request is sent
 			alert("Your contact information has been sent. We will contact you soon.");
+		}).fail(function (jqXHR, textStatus, errorThrown) {	// What do we want to do when AJAX request is sent
+			alert("An error occurred with AJAX: " + jqXHR + ", " + textStatus + ", " + errorThrown);
 		});
 //		alert(contact.clientname);
+		return false;  //Prevent Page Refresh when FORM is completed
 	});
 });
