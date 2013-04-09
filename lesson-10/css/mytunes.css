@@ -60,12 +60,23 @@ header {
 }
 .album {
 	float:left;
+	min-height: 186px;
 	margin-right:2%;  /* was 20px */
-	padding: 2%;  /* was 10px */
-	padding-bottom: 0;
+	padding-right: 2%;  /* was 10px */
+	padding-left: 2%;  /* was 10px */
+	padding-top: 10px;
+	padding-bottom: 10px;
 	text-align:center;
 	width: 26%;  /* new */
 	cursor:pointer;
+}
+.album h5 {
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+.album img {
+	border: 1px solid #aaa;
 }
 
 div.albumadd {
