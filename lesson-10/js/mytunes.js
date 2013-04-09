@@ -19,17 +19,14 @@ $(document).ready(function() {
 	function showTracks(genreID,artistID,albumID) {
 		if (music[genreID].artists[artistID].albums[albumID].tracks) {
 			var content = '<section class="tracks span12">',
-				trackList = [],
-				maxTrackNum = 0;
+				trackList = [];
 	 		content += '<h3>Tracks&nbsp;<a data-genreid='+genreID+' data-artistid='+artistID+' data-albumid='+albumID+'  id="plustrack"><i class="icon-plus"></i></a></h3>';
 			// Sort the tracks by track number (otherwise, sorted in object by trackid)
+			// Create DOM element for each track, indexed by track number
 			$.each(music[genreID].artists[artistID].albums[albumID].tracks, function(index, value) {
 				trackList[value.track_num] = '<article data-trackid='+index+'>' + value.track_num + ": " + value.track + '</article>';
-				if ( value.track_num > maxTrackNum) {
-					maxTrackNum = value.track_num;
-				}
 			});
-			// Compile track list DOM elements
+			// Compile track list DOM elements, ordered by array index (= track number)
 			$.each(trackList, function(index, value) {
 				if (trackList[index]) {
 					content += trackList[index];
