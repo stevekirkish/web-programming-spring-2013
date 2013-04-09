@@ -51,20 +51,73 @@ header {
 	margin:10px;
 }
 .albums {
-	border:#888888;
-	border-style:solid;
-	border-width:2px;
+	border: 2px solid #888;
 	border-radius:10px;
-	
+	background: #fff;
+	padding-bottom: 0;
+	margin-bottom: 10px;
+	overflow: hidden;
 }
 .album {
 	float:left;
 	margin-right:2%;  /* was 20px */
 	padding: 2%;  /* was 10px */
+	padding-bottom: 0;
 	text-align:center;
 	width: 26%;  /* new */
 	cursor:pointer;
 }
+
+div.albumadd {
+	clear: both;
+	padding: 0 0 0 12px;
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: 1px solid #bbb;
+	width: 98%;
+	overflow: auto;
+}
+
+div.albumadd > div:first-child {
+	float: left;
+}
+
+div.albumadd h3 {
+	font-size: 13px;
+	float: left;
+	margin-top: 0px;
+	margin-bottom: 0;
+	margin-right: 10px;
+	line-height: 37px;
+}
+
+div.albumadd a {
+	float: left;
+	margin-right: 8px;
+	line-height: 37px;
+	font-weight: bold;
+	font-size: 20px;
+	font-family: "Courier New", Courier, monospace;
+	cursor: pointer;
+}
+div.albumadd a:hover {
+	text-decoration: none;
+}
+div.newalbumbox {
+	margin: 5px 0 0 20px;
+	display: none;
+}
+div.newalbumbox input {
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	padding-bottom: normal;
+	width: auto;
+}
+div.newalbumbox button {
+	margin-top: 2px;
+}
+
 p[contenteditable] {
 	min-height: 20px;
 	-moz-box-shadow: 0 0 3px 3px #BBB;
