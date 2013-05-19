@@ -1,0 +1,10 @@
+
+bootstrap.js MODIFICATION
+
+The current release of Bootstrap (v1.9.1) has a bug. Clicking a button-bar shows or hides a dropdown section, and the button-bar HTML tag removes or adds a "collapsed" class accordingly. This allows you to CSS-style the selected Button-bar accordingly, and have different styling for non-selected items. The accordian feature allows only one item to open at a time, closing a previously opened item if necessary. The bug is that, when the previously opened item is closed, Bootstrap neglects to add the "collapsed" class. So, this closed item still has the styling associated with an open item.
+
+There is a fix, in GitHub: one line of JavaScript code. Find it here:
+
+https://github.com/btholt/bootstrap/commit/b66356537162346d54d10d20757315c5962bc8bd
+
+Click the "View File" button and look for line 164. Locate the surrounding code in your bootstrap.js file (it became line 631 in my version) and insert this line in the proper place. Problem fixed, styling consistent.

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:America/Los_Angeles
+END:VTIMEZONE
+BEGIN:VEVENT
+SUMMARY:Art Walk
+DTSTART:20131214T170000
+DTEND:20131214T200000
+LOCATION:Healdsburg, CA
+DESCRIPTION:It's Second Saturday - time for the Healdsburg Art Walk! Come into town for Art, Food, Wine and more, hosted by 23 galleries. For maps and gallery information, go to www.healdsburggalleries.com.
+SEQUENCE:5
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,544 @@
+@charset "utf-8";
+/* CSS Document for Healdsburg Galleries */
+
+html {
+	height: 100%;
+}
+
+body {
+	background: #b81f25;
+	min-height: 100%;
+}
+
+#wrapper {
+	background: #fff;
+	width: 90%;
+	min-width: 270px;
+	max-width: 800px;
+	margin: 0 auto;
+	min-height: 100%;
+}
+
+header {
+	background: #000;
+	min-height: 100px;
+}
+
+header img {
+	display: block;
+	margin: 0 auto;
+}
+
+header hgroup {
+	padding-top: 10px;
+	float: left;
+	background: #000;
+}
+/*
+header .head-title:first-child {
+	float: left;
+}
+*/
+
+header h2 {
+	font-family: 'Comfortaa', Verdana, Geneva, sans-serif;
+	font-size: 2.2em;
+	color: #fed18d;
+	letter-spacing: .15em;
+	line-height: 1.25;
+	text-align: center;
+}
+.clear {
+	clear: both;
+}
+.centered {
+	display: block;
+	margin: 0 auto;
+}
+
+.underline {
+	text-decoration: underline;
+}
+.stretch {
+    display:inline-block;
+    transform:scale(1.35,1); /* W3C */
+    -webkit-transform:scale(1.35,1); /* Safari and Chrome */
+    -moz-transform:scale(1.35,1); /* Firefox */
+    -ms-transform:scale(1.35,1); /* IE 9 */
+    -o-transform:scale(1.35,1); /* Opera */
+}
+span.redtext {
+	color: #b81f25;
+}
+
+/* Top Level Nav tabs */
+.navbar .nav {
+	width: 100%;
+}
+
+.navbar .nav li {
+	width: 33.33%;
+	border-bottom: 1px solid #fed18d;
+}
+.navbar .nav  li.active {
+	border-bottom: 1px solid #fff;
+}
+
+.navbar .nav > li > a {
+	background-color: rgba(254, 209, 100, 0.5);
+	padding: 6px .5em 6px;
+	font-size: 1.3em;
+	text-align: center;
+/*	-webkit-box-shadow: inset 0 3px 8px rgba(191, 128, 33, 0.5); */
+	-webkit-box-shadow: inset 0px 3px 8px rgba(255, 255, 255, 0.75),
+						inset 2px 0px 0px rgba(255, 255, 255, 1);
+       -moz-box-shadow: inset 0px 3px 8px rgba(255, 255, 255, 0.75),
+						inset 2px 0px 0px rgba(255, 255, 255, 1);
+            box-shadow: inset 0px 3px 8px rgba(255, 255, 255, 0.85),
+						inset 2px 0px 0px rgba(255, 255, 255, 1);
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus { 
+	background-color: #fff;
+	/*			      h-shadow v-shadow blur spread color  */
+	-webkit-box-shadow: inset 0 3px 8px rgba(254, 209, 141, 0.75);
+       -moz-box-shadow: inset 0 3px 8px rgba(254, 209, 141, 0.75);
+            box-shadow: inset 0 3px 6px rgba(254, 209, 141, 0.75);
+}
+
+/* Tabs within each Gallery Item */
+.nav-tabs {
+	border-bottom-color: #165277;
+}
+.nav-tabs > li > a {
+	font-size: 15px;
+	border-top-color: #ddd;
+	border-right-color: #ddd;
+	border-left-color: #ddd;
+}
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover, 
+.nav-tabs > .active > a:focus {
+	border-top-color: #165277;
+	border-right-color: #165277;
+	border-left-color: #165277;
+} 
+button#show_all {
+	color: #000;
+	font-size: 14px;
+	width: 65px;
+	padding: 4px 0px;
+	text-shadow: none;
+	background-color: #fed18d;
+	background-image: -moz-linear-gradient(top, #f9ebd5, #fed18d);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9ebd5), to(#fed18d));
+	background-image: -webkit-linear-gradient(top, #f9ebd5, #fed18d);
+	background-image: -o-linear-gradient(top, #f9ebd5, #fed18d);
+	background-image: linear-gradient(to bottom, #f9ebd5, #fed18d);
+}
+
+#galleries {
+	margin: 40px 10px 10px;
+	min-height: 500px;
+}
+
+#galleries .filt-label {
+	float: left;
+	font-size: 16px;
+	line-height: 40px;
+	padding: 0 5px;
+	margin-bottom: 0;
+	font-weight: bold;
+	display: inline-block;
+}
+
+#galleries .filt_select {
+	line-height: normal;
+	width: 140px;
+	margin: 5px;
+	font-size: 16px;
+}
+
+#galleries .gallery_hdr {
+	background: #f8deb6;
+	text-decoration: none;
+}
+#galleries .gallery_hdr a.collapsed {
+	background: #fff;
+	color: #08C;
+}
+#galleries .accordion-group .in {
+	border-bottom-width: 2px;
+}
+#galleries .accordion-toggle {
+	font-size: 15px;
+}
+#galleries .gal_logogenre,
+#galleries .gal_logo2 {
+	float: left;
+	margin: 0 20px 8px 0;
+	width: 40%;
+}
+#galleries .gal_logo,
+#galleries .gal_logo2 {
+	min-width: 240px;
+	max-width: 360px;
+	max-height: 100px;
+	margin-bottom: 10px;
+}
+#galleries .gal_logo img,
+#galleries .gal_logo2 img {
+	display: block;
+	margin: 0 auto;
+}
+#galleries .gal_genre_list {
+	padding: 3px 5px;
+	background: #F8DEB6;
+	min-width: 240px;
+}
+#galleries .gal_genre_list p {
+	margin: 0;
+}
+#galleries .gal_addr,
+#galleries .gal_desc {
+	margin: 0 0 4px;
+	text-align: left;
+	display: inline-block;
+	width: 57%;
+	min-width: 240px;
+}
+#galleries .gal_addr {
+	text-align: center;
+}
+#galleries .gal_addr p {
+	display: inline-block;
+	padding-left: 0px;
+	margin: 0 auto;
+}
+
+#gal_map {
+	padding: 10px;
+}
+
+#map_galleries {
+	width: 100%;
+	height: 500px;
+	margin-top: 10px;
+}
+#map_galleries img { 
+    max-width: none; /* Cancels "img {max-width}" style in Bootstrap, that warps map infowindows */
+}
+#artwalk {
+	width: 95%;
+	margin: 40px auto 10px;
+}
+#artwalk img{
+	display: block;
+	margin: 5px auto;
+	height: 75px;
+}
+#artwalk #town_bar {
+	height: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: black;
+	width: 100%;
+	padding: 0;
+	line-height: 18px;
+	overflow: hidden;
+}
+#artwalk .centered {
+	width: 280px;
+	background: #b81f25;
+}
+#artwalk #town_bar p {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 0.9em;
+	color: #fed18d;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+#artwalk_subtext {
+	border-bottom: 1px solid #000;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+#artwalk #sec_sat p {
+	color: #165277;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 2.2em;
+	font-weight: bold;
+	margin: 0;
+	text-align: center;
+	line-height: 38px;
+	width: 100%;
+	display: inline-block;
+}
+#artwalk #subtext_info {
+	text-align: center;
+}
+#artwalk #subtext_info h3 {
+	margin: 0;
+	font-weight: bold;
+	line-height: 36px;
+}
+#artwalk #subtext_info p {
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+#artwalk_dates h3,
+#artwalk_dates h4 {
+	font-size: 1.4em;
+	line-height: 30px;
+	text-align: center;
+	color: #165277;
+	margin-bottom: 0;
+}
+#artwalk_dates h4 {
+	font-size: 1.3em;
+	color: #444;
+}
+#artwalk_dates .event_date_group {
+	margin: 0 auto;
+	width: 360px;
+}
+#artwalk_dates .event_date_group .event_date {
+	width: 220px;
+}
+#artwalk_dates .event_date_group .event_date h4{
+	text-align: right;
+	margin-bottom: 5px;
+}
+#artwalk_dates .event_date_group .add_to_cal {
+	padding: 0 5px;
+	margin: 0 0 0 10px;
+}
+#artwalk_dates .event_date_group .add_to_cal img {
+	height: auto;
+	width: auto;
+	margin-left: 10px;
+}
+#artwalk_dates h4.eventListHdr {
+	border-top: 1px solid #666;
+	padding-top: 10px;
+}
+h4.closing {
+	color: #165277;
+	font-family: Tahoma, Geneva, sans-serif;
+	text-align: center;
+}
+
+footer {
+	margin-top: 20px;
+	background: #b81f25; /* #b81f25; #f17e82*/
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	width:100%;
+}
+footer #copyright {
+	width: 65%;
+}
+footer #copyright p {
+	font-size: 10px;
+	float: left;
+	line-height: 25px;
+	margin: 0;
+	margin-right: 20px;
+}
+footer #footer_extras iframe {
+	width: 35%;
+	border:none;
+	min-height: 80px;
+}
+
+
+/* Media Query for any iPhone, with or without Retina */
+@media only screen and (min-device-width : 320px) and (max-device-width: 480px) { 
+	/* Retina Screens Only */
+/*@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) { */
+body {
+	padding: 0 8px;  /* increase to widen red borders */
+}
+
+#wrapper {
+	width: 100%;
+}
+header {
+	min-height: 2em;
+}
+header hgroup {
+	padding-top: 0;
+}
+header h2 {
+	font-size: 1.6em;
+}
+header #hdr_logo,
+#hg_logo {
+	display: none;  /* add this style to hide logo */
+	
+}
+header img {  /*reduced logo size, if shown in header */
+	height: 52px;
+	width: 69px;
+}
+.navbar .nav > li > a {
+	padding: 5px .2em 5px;
+	font-size: 1.2em;
+}
+#galleries .filt-label {
+	font-size: 14px;
+	width: 50px;
+	line-height: 18px;
+}
+#galleries .filt-select {
+	font-size: 16px;
+}
+#gal_filter {
+	width: 280px;
+	margin: 0 auto;
+}
+#galleries .gal_logogenre {
+	float: none;
+	margin: 0 0 8px;
+	width: 100%;
+}
+#galleries .gal_logo {
+	min-width: 50px;
+}
+#galleries .gal_logo img {
+	max-height: 50px;
+} 
+#galleries .gal_logo2 img {
+	max-height: 75px;
+}
+#galleries .gal_genre_list {
+	font-size: 12px;
+	margin: 0 auto;
+}
+#galleries .gal_desc {
+	display: inline-block;
+	height: 8em;
+	width: 100%;
+	overflow-y: scroll;
+}
+#galleries .gal_addr {
+	width: 100%;
+}
+#map_galleries {
+	height: 400px;
+}
+#artwalk img{
+	width: 280px;
+	height: 52px;
+}
+#artwalk .centered {
+	width: 240px;
+}
+#artwalk #sec_sat p {
+	font-size: 1.8em;
+	letter-spacing: 3px;
+	line-height: 115%;
+}
+#artwalk #subtext_info h3 {
+	font-size: 18px;
+	line-height: 28px;
+}
+#artwalk #subtext_info p {
+	font-size: 1.0em;
+	line-height: 120%;
+}
+#artwalk_dates h3,
+#artwalk_dates h4 {
+	line-height: 24px;
+}
+#artwalk_dates .event_date_group {
+	width: 280px;
+}
+#artwalk_dates .event_date_group .event_date {
+	padding: 3px;
+	width: 140px;
+}
+.stretch {
+    transform:scale(1,1); /* W3C */
+    -webkit-transform:scale(1,1); /* Safari and Chrome */
+    -moz-transform:scale(1,1); /* Firefox */
+    -ms-transform:scale(1,1); /* IE 9 */
+    -o-transform:scale(1,1); /* Opera */
+}
+footer {
+	font-size: 11px;
+}
+
+}
+/* Landscapes Styles on Smart Phones*/
+@media only screen and (min-width : 351px) and (max-device-width : 480px)  {  /* was (min-width : 321px) */
+
+#gal_filter {
+	width: 350px;
+	margin: 0 auto;
+}
+#galleries .filt-label {
+	font-size: 14px;
+	width: 100px;
+	line-height: 40px;
+}
+#galleries .gal_logogenre,
+#galleries .gal_logo2 {
+	float: left;
+	margin: 0 10px 8px 0;
+	width: 40%;
+}
+#galleries .gal_logo,
+#galleries .gal_logo2 {
+	min-width: 50px;
+	max-width: 180px;
+}
+#galleries .gal_logo img {
+	margin: 0 auto;
+}
+#galleries .gal_genre_list {
+	min-width: 140px;
+}
+#galleries .gal_addr,
+#galleries .gal_desc {
+	margin: 0 0px 4px;
+	text-align: left;
+	min-width: 210px;
+	width: 57%;
+}
+#galleries .gal_addr p {
+	text-align: left;
+}
+#artwalk #hg_logo {
+	display: block;
+}
+#artwalk .row-fluid .span3 {
+	width: 22%;  /* .92817679558011 */
+	float: left;
+}
+#artwalk #hg_logo img{
+	width: 69px;
+	height: 52px;
+}
+#artwalk .row-fluid .span9 {
+	width: 72%; /* 74.30939226519337 */
+	float: left;
+}
+#artwalk_dates .event_date_group {
+	width: 360px;
+}
+#artwalk_dates .event_date_group .event_date {
+	padding: 5px;
+	width: 220px;
+}
+
+}
+
+
+
+
+
