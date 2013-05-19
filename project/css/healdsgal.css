@@ -34,11 +34,6 @@ header hgroup {
 	float: left;
 	background: #000;
 }
-/*
-header .head-title:first-child {
-	float: left;
-}
-*/
 
 header h2 {
 	font-family: 'Comfortaa', Verdana, Geneva, sans-serif;
@@ -89,7 +84,6 @@ span.redtext {
 	padding: 6px .5em 6px;
 	font-size: 1.3em;
 	text-align: center;
-/*	-webkit-box-shadow: inset 0 3px 8px rgba(191, 128, 33, 0.5); */
 	-webkit-box-shadow: inset 0px 3px 8px rgba(255, 255, 255, 0.75),
 						inset 2px 0px 0px rgba(255, 255, 255, 1);
        -moz-box-shadow: inset 0px 3px 8px rgba(255, 255, 255, 0.75),
@@ -333,7 +327,7 @@ h4.closing {
 
 footer {
 	margin-top: 20px;
-	background: #b81f25; /* #b81f25; #f17e82*/
+	background: #b81f25;
 	color: white;
 	font-family: Verdana, Geneva, sans-serif;
 	width:100%;
@@ -517,7 +511,7 @@ footer {
 	display: block;
 }
 #artwalk .row-fluid .span3 {
-	width: 22%;  /* .92817679558011 */
+	width: 22%;
 	float: left;
 }
 #artwalk #hg_logo img{
@@ -525,7 +519,7 @@ footer {
 	height: 52px;
 }
 #artwalk .row-fluid .span9 {
-	width: 72%; /* 74.30939226519337 */
+	width: 72%;
 	float: left;
 }
 #artwalk_dates .event_date_group {

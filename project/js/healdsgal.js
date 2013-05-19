@@ -66,7 +66,7 @@ $(document).ready(function() {
 	function galleryLogo(index, value) {
 		if (value.logos) {
 			var content,
-				logoUrl = value.logos[index].logo_url,  // value.idgalleries
+				logoUrl = value.logos[index].logo_url,
 				logoTitle = value.logos[index].logo_title;
 			content = '<img src="images/logos/' + logoUrl + '" alt="' + logoTitle + '">';
 			return content;
@@ -85,7 +85,7 @@ $(document).ready(function() {
 			contentGenre += valueGenre.genre + ", ";
 		});
 		
-		contentGenre = contentGenre.substr(0, contentGenre.length - 2)
+		contentGenre = contentGenre.substr(0, contentGenre.length - 2);
 		
 		content += contentGenre + '</em></p></div></div>';
 		
@@ -99,8 +99,8 @@ $(document).ready(function() {
 			content = '<div id="gallery_info' + index + '" class="gal_info tab-pane">';  // Add CLASS active LATER
 
 		// Address, Phone, URL, Logo content for each Gallery Listing
-//		content += '<div class="gal_logo2">' + galleryLogo(index, value) + '</div>';
-		content += logoGenreBlock(index, value);
+//		content += '<div class="gal_logo2">' + galleryLogo(index, value) + '</div>';  ** code for Logo only
+		content += logoGenreBlock(index, value);		// Logo plus Genre List block
 		content += '<div class="gal_addr"><p>' + value.gal_addr1 + '<br />';
 		if (value.gal_addr2) { content += value.gal_addr2 + '<br />'; }
 		content += value.gal_city + ', ' + value.gal_state + ' ' + value.gal_zip + '<br />';
@@ -208,7 +208,7 @@ $(document).ready(function() {
 			}, timeout);
 		});
 		
-		// Event handler: Load the gallery map into the Map Tab when the tab is clicked	
+		// Event handler: Load the gallery map into the the Gallery Item's Map Tab when the tab is clicked	
 		$(".gal_map_tab").click( function() {
 			var galIndex = $(this).attr('data-galindex'),
 				mapDiv = $(this).attr('href').slice(1),	// slice removes the leading # symbol
@@ -222,7 +222,7 @@ $(document).ready(function() {
 						center: locationGallery,
 						zoom: 17
 					}),
-				// Place a marker at the gallery's location
+					// Place a marker at the gallery's location
 					marker = new google.maps.Marker({
   	 		   	    	map: map,
   		  	   	    	position: locationGallery
@@ -292,7 +292,7 @@ $(document).ready(function() {
 	
 	gallery_db = getGalleries();
 	gallery_genres = getGenres();
-	console.log(gallery_db);
+//	console.log(gallery_db);
 //	console.log(gallery_genres);
 	galleryList();
 
