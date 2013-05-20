@@ -1,0 +1,20 @@
+Healdsburg Galleries (www.healdsburggalleries.com/test)
+
+This project contains files for the Healdsburg Galleries Website. This dynamic site is framed in the "index.php" file, and built using the "js/healdsgal.js" file. "php/get-galleries.php" fetches the galleries MySQL database contents needed for the site, and "php/get-genres.php" fetches a subset used to create a select-option menu for a Gallery Genres filter. "php/JSON.php" is used instead of PHP's "json_encode" as it handles UTF-16 codes properly. Images used for the site are kept in an images subfolder. Bootstrap files are used to add some of the responsive design elements, as well as some features like the collapsible accordion button-bars and nav-tabs. "bootstrap.js" is slightly modified to resolve a bug in the collapsible accordion tabs - refer to the included file, "bootstrap_js_modification.txt", for details. The CSS file contains further media-specific customizations, as well as general page styling and some bootstrap overrides. 
+
+The MySQL database has tables for galleries' names, addresses, phone, etc.; gallery descriptions; gallery logos (as directory links;) and genres with a secondary table to allow many-to-many connections with the galleries table. Also structured but not yet implemented are the contacts and events tables. Refer to the "database" folder for an EER diagram of the database model.
+
+The website can be found at www.healdsburggalleries.com (/test, until promoted to the main directory.) It has been validated on current versions of Chrome (Mac and PC), Firefox, IE, Safari (Mac, PC, iOS 4.1, 5, 6).
+
+Some interesting features of the site:
+
+1. The site has three sections: List of Galleries, each openable to reveal a gallery description, location information, and a map showing where to find it; a map of downtown Healdsburg with all galleries marked; and a section dedicated to Art Walk.
+
+2. The Gallery section uses Bootstrap's collapsible accordion tabs for the gallery list, and within each gallery tab, a set of three nav-tabs. The header on this page relies on Bootstrap's responsive scaffolding, but all other elements of the page are handled with custom CSS, including media specific rules to restructure the layout based on screen size and device type, and even if mobile device is in portrait or landscape mode. Even the header logo is hidden on mobile devices for less clutter. Note that the code loads the map only on demand, and doesn't reload it when the tab is returned to.
+
+3. The Gallery section includes a "Pick a Genre" select tool, to filter the gallery list based on what type of art the user might want to see. All genres are kept in the database, "php/get-genres.php" fetches the genre list (through a javascript AJAX call,) and Javascript builds the select-option tool based on the list. It further checks for any unused genres and leaves those out. Finally, a "Show All" button is there to quickly reset the gallery list.
+
+4. The Map section uses the Google Maps v3 API to render the dynamic map with gallery markers. The map is loaded only on demand and not reloaded when the tab is returned to. The map is resized for smaller screens in CSS. Also, markers reveal gallery information when clicked. One note about the Google API: A key was obtained for the website, and a referrers list created to limit who can use the key. Most browsers are happy when the key's referrer is "*.healdsburggalleries.com/*", but Safari on the Mac requires "healdsburggalleries.com/*" (no leading "www.") or returns an invalid referrer error. Go figure.
+
+5. The Art Walk tab is mostly coded in HTML for the header layout, and uses PHP code to calculate the list of "second Saturday" dates. The PHP code recognizes the upcoming date and highlights it, and then lists future dates in a following list, unless there are no future dates. An "Add to Calendar" link is presented for each date, using a link to a one of a group of ".ics" files. This was tested to work with Outlook, Mac iCal, and iPhone/iPad devices.
+
