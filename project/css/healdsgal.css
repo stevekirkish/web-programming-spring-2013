@@ -334,13 +334,14 @@ footer {
 }
 footer #copyright {
 	width: 65%;
+	float: left;
 }
 footer #copyright p {
 	font-size: 10px;
-	float: left;
-	line-height: 25px;
+	line-height: 12px;
 	margin: 0;
 	margin-right: 20px;
+	padding: 6px;
 }
 footer #footer_extras iframe {
 	width: 35%;
@@ -466,6 +467,10 @@ header img {  /*reduced logo size, if shown in header */
 footer {
 	font-size: 11px;
 }
+footer #copyright,
+footer #footer_extras iframe {
+	width: 90%;
+}
 
 }
 /* Landscapes Styles on Smart Phones*/
@@ -528,6 +533,12 @@ footer {
 #artwalk_dates .event_date_group .event_date {
 	padding: 5px;
 	width: 220px;
+}
+footer #copyright {
+	width: 65%;
+}
+footer #footer_extras iframe {
+	width: 35%;
 }
 
 }
