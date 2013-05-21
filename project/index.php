@@ -120,6 +120,11 @@
  						</a>
         			</td>
         		</tr>
+                <tr>
+                	<td colspan="2" class="brochure-click">
+                    	<a href="artwalk_poster.php">(Click here for printable brochure)</a>
+                    </td>
+                </tr>
         	</tbody>
         </table>
                        <?php
