@@ -1,0 +1,71 @@
+body {
+	background: #fff;
+	width: 560px;
+}
+
+.stretch {
+    transform:scale(1,1.7); /* W3C */
+    -webkit-transform:scale(1,1.7); /* Safari and Chrome */
+    -moz-transform:scale(1,1.7); /* Firefox */
+    -ms-transform:scale(1,1.7); /* IE 9 */
+    -o-transform:scale(1,1.7); /* Opera */
+}
+
+#print_page {
+	width: 540px;
+	text-align: right;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 14px;
+	color: #06F;
+	padding-right: 10px;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+#artwalk_poster img {
+	position: absolute;
+	top: 40px;
+	left: 21px;
+	z-index: -1;
+}
+
+#artwalk_header {
+	position: absolute;
+	top: 23px;
+	left: 40px;
+	height: 47px;
+	z-index: 10;
+}
+
+#artwalk_header p {
+	text-align: center;
+	line-height: 47px;
+	font-size: 15.25px; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#tagline {
+	position: absolute;
+	top: 600px;
+	left: 40px; 
+	font-family: Verdana, Geneva, sans-serif;
+	text-align: center;
+	font-size: 14px;
+}
+	
+/* Text Colors in Header */
+.blue {
+	color: #5abde9;
+}
+.gray {
+	color: #968688;
+	vertical-align: 3%;
+}
+.putty {
+	color: #dee3dc;
+}
+.red {
+	color: #ed1b24;
+}
+
