@@ -50,6 +50,12 @@ header h2 {
 	display: block;
 	margin: 0 auto;
 }
+.brochure-click {
+	text-align: center;
+}
+.brochure-click a {
+	color: #2a6d96;
+}
 
 .underline {
 	text-decoration: underline;
@@ -226,6 +232,7 @@ button#show_all {
 #artwalk {
 	width: 95%;
 	margin: 40px auto 10px;
+	min-height: 500px;
 }
 #artwalk img{
 	display: block;
@@ -351,7 +358,10 @@ footer #footer_extras iframe {
 
 
 /* Media Query for any iPhone, with or without Retina */
-@media only screen and (min-device-width : 320px) and (max-device-width: 480px) { 
+@media
+only screen and (min-device-width : 320px) and (max-device-width: 480px),
+only screen and (-webkit-device-pixel-ratio: 2) { 
+
 	/* Retina Screens Only */
 /*@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) { */
@@ -473,6 +483,23 @@ footer #footer_extras iframe {
 }
 
 }
+
+@media only screen and (-webkit-device-pixel-ratio: 2) { 
+header h2 {
+	font-size: 1.5em;
+	letter-spacing: .3em; /* does nothing */
+}
+button#show_all {
+	font-size: 12px;
+}
+#galleries .filt-label {
+	font-size: 13px;
+}
+
+}
+
+
+
 /* Landscapes Styles on Smart Phones*/
 @media only screen and (min-width : 351px) and (max-device-width : 480px)  {  /* was (min-width : 321px) */
 

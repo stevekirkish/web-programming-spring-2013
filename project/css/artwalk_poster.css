@@ -11,15 +11,33 @@ body {
     -o-transform:scale(1,1.7); /* Opera */
 }
 
-#print_page {
-	width: 540px;
-	text-align: right;
+#page_controls {
+	width: 555px;
+}
+
+#page_controls button {
+	float: left;
+	margin-left: 12px;
+}
+#page_controls button a {
+	text-decoration: none;
+	color: #000;
+}
+#page_controls #print_pg {
+	float: right;
+	width: 60px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 14px;
 	color: #06F;
-	padding-right: 10px;
-	line-height: 20px;
 	cursor: pointer;
+	line-height: 20px;
+	margin-top: 5px;
+}
+#page_controls #print_pg img {
+}
+#page_controls #print_pg p {
+	display: inline;
+	margin-left: 5px;
 }
 
 #artwalk_poster img {
@@ -31,15 +49,14 @@ body {
 
 #artwalk_header {
 	position: absolute;
-	top: 23px;
+	top: 52px;
 	left: 40px;
-	height: 47px;
 	z-index: 10;
 }
 
 #artwalk_header p {
 	text-align: center;
-	line-height: 47px;
+	margin: 0;
 	font-size: 15.25px; 
 	font-family: Tahoma, Geneva, sans-serif;
 	font-weight: bold;
@@ -67,5 +84,15 @@ body {
 }
 .red {
 	color: #ed1b24;
+}
+/* First Query: Media Query for any iPhone, with or without Retina */
+/* Second Query: Covers some Android devices (e.g., Samsung Galaxy 2 */
+@media
+only screen and (min-device-width : 320px) and (max-device-width: 480px),
+only screen and (-webkit-device-pixel-ratio: 2) {
+#artwalk_header p {
+	font-size: 9px; 
+	width: 500px;
+}
 }
 

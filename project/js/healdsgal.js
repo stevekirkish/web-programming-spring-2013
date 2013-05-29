@@ -78,7 +78,7 @@ $(document).ready(function() {
 		var contentGenre = '',
 			content;
 		
-		content = '<div class="gal_logogenre"><div class="gal_logo">' + galleryLogo(index, value) + '</div>';
+		content = '<div class="gal_logogenre"><div class="gal_logo photo">' + galleryLogo(index, value) + '</div>';
 		content += '<div class="gal_genre_list"><p><em>';
 		
 		$.each(value.genres, function(indexGenre, valueGenre) {
@@ -96,16 +96,16 @@ $(document).ready(function() {
 	function galleryItem(index, value) {
 		// Create Collapsing Accordian Button-bar Structure for Each Galery Listing
 		var phone = "(" + value.gal_phone.substr(0,3) + ") " + value.gal_phone.substr(3,3) + "-" + value.gal_phone.substr(6,4),
-			content = '<div id="gallery_info' + index + '" class="gal_info tab-pane">';  // Add CLASS active LATER
+			content = '<div id="gallery_info' + index + '" class="gal_info tab-pane vcard">';  // Add CLASS active LATER
 
 		// Address, Phone, URL, Logo content for each Gallery Listing
 //		content += '<div class="gal_logo2">' + galleryLogo(index, value) + '</div>';  ** code for Logo only
 		content += logoGenreBlock(index, value);		// Logo plus Genre List block
-		content += '<div class="gal_addr"><p>' + value.gal_addr1 + '<br />';
+		content += '<div class="gal_addr"><p><span class="street-address">' + value.gal_addr1 + '</span><br />';
 		if (value.gal_addr2) { content += value.gal_addr2 + '<br />'; }
-		content += value.gal_city + ', ' + value.gal_state + ' ' + value.gal_zip + '<br />';
-		content += '<a class="underline" href="tel:' + value.gal_phone + '">' + phone + '</a><br />';
-		content += '<a class="underline" href="http://' + value.gal_url + '">' + value.gal_url + '</a></p></div>\n</div>';
+		content += '<span class="locality">' + value.gal_city + '</span>,&nbsp;<span class="region">' + value.gal_state + '</span>&nbsp;<span class="postal-code">' + value.gal_zip + '</span><br />';
+		content += '<a class="underline tel" href="tel:' + value.gal_phone + '">' + phone + '</a><br />';
+		content += '<a class="underline url" href="http://' + value.gal_url + '">' + value.gal_url + '</a></p></div>\n</div>';
 
 		return content;
 	}
@@ -139,7 +139,7 @@ $(document).ready(function() {
 			content += '<div class="accordion-group" data-galIndex=' + value.idgalleries + '>\n';
 			content += '<div class="accordion-heading gallery_hdr">\n';
 			// To remove accordian effect, remove this from the following line: data-parent="#gallery_list"
-			content += '<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#gallery_list" href="#collapseGal' + index + '">';
+			content += '<a class="accordion-toggle collapsed fn org" data-toggle="collapse" data-parent="#gallery_list" href="#collapseGal' + index + '">';
 			// Gallery name goes into the main button-bar
 			content += value.gal_name + '</a>\n</div>\n';
 			content += '<div id="collapseGal' + index + '" class="accordion-body collapse">\n';
